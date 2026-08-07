@@ -1,0 +1,21 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "PdfLatex",
+      "tools": ["pdflatex"]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "PdfLatex"
+}
