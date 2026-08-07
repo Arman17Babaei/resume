@@ -1,216 +1,94 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Professional CV
-% LaTeX Template
-% Version 3.0 (December 17, 2022)
-%
-% This template originates from:
-% https://www.LaTeXTemplates.com
-%
-% Author:
-% Vel (vel@latextemplates.com)
-%
-% Original author:
-% Trey Hunner (http://www.treyhunner.com/)
-%
-% License:
-% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
-%
+% Professional Resume - Arman Babaei
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[
-	%a4paper, % Uncomment for A4 paper size (default is US letter)
-	11pt, % Default font size, can use 10pt, 11pt or 12pt
-]{resume} % Use the resume class
-
-\usepackage{ebgaramond} % Use the EB Garamond font
+\documentclass[11pt]{resume}
+\usepackage{ebgaramond}
 \usepackage{ulem}
 \usepackage{hyperref}
+\AtBeginDocument{\let\oldhref=\href\renewcommand\href[2]{\dotuline{\oldhref{#1}{#2}}}}
+\pagestyle{plain}
+\name{Arman Babaei}
+\address{+98~$\cdot$~919~$\cdot$~043~$\cdot$~7966 \\ 292.arma@gmail.com \\ \href{https://www.linkedin.com/in/arman-babaei/}{linkedin} \\ \href{https://github.com/Arman17Babaei}{github}}
 
-
-\AtBeginDocument{
-   \let\oldhref=\href
-   \renewcommand\href[2]{\dotuline{\oldhref{#1}{#2}}}
-}
-
-
-\pagestyle{plain} 
-%------------------------------------------------
-
-\name{Arman Babaei} % Your name to appear at the top
-
-% You can use the \address command up to 3 times for 3 different addresses or pieces of contact information
-% Any new lines (\\) you use in the \address commands will be converted to symbols, so each address will appear as a single line.
-
-% \address{123 Broadway \\ City, State 12345} % Main address
-
-% \address{123 Pleasant Lane \\ City, State 12345} % A secondary address (optional)
-
-\address{+98~$\cdot$~919~$\cdot$~043~$\cdot$~7966 \\ 292.arma@gmail.com \\ \href{https://www.linkedin.com/in/arman-babaei/}{linkedin} \\ \href{https://github.com/Arman17Babaei}{github}} % Contact information
-
-
-%----------------------------------------------------------------------------------------
 \begin{document}
-	%\vspace{20pt}
-	% \vspace*{20pt}
-	\begin{rSection}{Professional Summary}
-		Software Engineer specializing in backend systems and distributed systems research.
-		Experienced in high-performance Go and Python development, distributed systems, and consensus algorithms.
-		Demonstrated success in industry and research with global institutions (EPFL, ISTA).
-	\end{rSection}
-	
-	%----------------------------------------------------------------------------------------
-	%	SKILLS
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{Skills}
-		\vspace{5pt}
-		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-			Languages & Go, Python, C++, Java, Kotlin, JS, Rust, Bash \\
-			Frameworks & Django, Flask, Spring, React, Node.js, Qt, AVX \\
-			Automation & Kubernetes, Docker, Jenkins, Sonarqube, Prometheus \\
-			Web Development & HTML, CSS, JavaScript, PHP \\
-			Databases & MongoDB, Redis, MySQL, PostgreSQL \\
-			Blockchain & Move, Solidity \\
-		\end{tabular}
-	\end{rSection}
 
-	\vspace{10pt}
+\begin{rSection}{Professional Summary}
+  Platform and distributed-systems engineer with production experience across backend development, SRE, and platform engineering. Builds reliability and deployment tooling for Kubernetes-based microservices and brings research experience in distributed protocols, programmable networking, and blockchain systems.
+\end{rSection}
 
-	%----------------------------------------------------------------------------------------
-	%	WORK EXPERIENCE SECTION
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{Work Experience}
-		\vspace{5pt}
-		\begin{rSubsection}{Tapsi}{September 2024 -- present}{Senior Backend Developer}{Tehran, Iran}
-			\item Extracted services from current code and rewrote them (from Node.js to Go) capable of handling ~1k req/s.
-			\item Implemented automatic relocation of passengers' origin with the help of our data scientists and frontend developers.
-			\item Improved our team's testing environemnt by introducing new tools and practices.
-			\item Maintained our teams services working with Python, Go and Node.js, and platforms like Kafka and Kubernetes.
-		\end{rSubsection}
-	
-		%------------------------------------------------
+\begin{rSection}{Skills}
+  \vspace{4pt}
+  \begin{tabular}{@{} >{\bfseries}l @{\hspace{5ex}} l @{}}
+    Languages & Go, Python, C++, Java, Kotlin, JavaScript, Rust, Bash \\
+    Platform/Cloud & Kubernetes, Docker, Helm, Flagger, Istio, ArgoCD/Flux, GitLab CI \\
+    Observability & Prometheus/VictoriaMetrics, Grafana, Graylog, Sentry \\
+    Backend/Data & gRPC, Kafka, Django, Spring, Node.js, PostgreSQL, MySQL, MongoDB, Redis \\
+    Systems & Distributed systems, reliability engineering, canary delivery, P4, Linux networking
+  \end{tabular}
+\end{rSection}
 
-		\begin{rSubsection}{Undisclosed Hedge Fund}{September 2023 -- February 2024}{Full-stack Developer Intern (Remote)}{}
-			\item Developed a job scheduler web service for intra-company tasks using Python and Django.
-			\item Implemented backend RESTful APIs and integrated with frontend components.
-		\end{rSubsection}
+\begin{rSection}{Work Experience}
+  \vspace{4pt}
+  \begin{rSubsection}{Tapsi}{September 2024 -- Present}{Proficient Platform Engineer}{Tehran, Iran}
+    \item \textbf{Platform Engineer (Apr'26 -- Present):} Build and roll out safer Kubernetes delivery workflows with Helm, Flagger, Istio, and GitOps; develop platform automation for canary releases, rollback safety, observability, and developer experience across production services.
+    \item \textbf{SRE (Sep'25 -- Apr'26):} Improved service reliability through production monitoring, incident analysis, on-call operations, and debugging across microservices, service-mesh traffic, and deployment infrastructure.
+    \item \textbf{Backend Engineer (Sep'24 -- Sep'25):} Built production passenger--driver matching features; extracted and rewrote services from Node.js to Go, including services handling roughly 1k requests/second; maintained Go/Python/Node.js services using Kafka and Kubernetes.
+  \end{rSubsection}
 
-		%------------------------------------------------
-		
-		\begin{rSubsection}{Mahsan Co.}{April 2020 -- July 2022}{C++/Python Developer}{Tehran, Iran}
-			\item Led the development of a domain-specific language in Python for end-to-end testing automation.
-			\item Developed a parallel network relaying software in C++, optimizing data throughput across distributed systems.
-			\item Acted as Scrum Master for a team of five, driving agile processes and delivering sprint goals consistently.
-		\end{rSubsection}
-		
-		%------------------------------------------------
-		
-		\begin{rSubsection}{Allameh Helli High School}{June 2019 -- October 2020}{Algorithm Design Teacher}{Tehran, Iran}
-			\item Taught advanced algorithm design to high school students, preparing them for Iran National Olympiad in Informatics.
-		\end{rSubsection}
-		
-	\end{rSection}
-	
-	\vspace{10pt}
-	
-		
-	%----------------------------------------------------------------------------------------
-	%	EDUCATION SECTION
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{Education}
-		\vspace{5pt}
-		\begin{rSubsection}{Sharif University of Technology}{September 2024 -- present}{M.S. in Computer Engineering (Networks)}{}{}
-			\item Current GPA: 17.70 (/20)
-			\item TOEFL Score: 114/120
-		\end{rSubsection}
+  \begin{rSubsection}{Undisclosed Hedge Fund}{September 2023 -- February 2024}{Full-stack Developer Intern}{Remote}
+    \item Developed a Python/Django job-scheduler web service for intra-company tasks, including backend REST APIs and frontend integration.
+  \end{rSubsection}
 
-		%------------------------------------------------
+  \begin{rSubsection}{Mahsan Co.}{September 2020 -- July 2022}{C++/Python Developer}{Tehran, Iran}
+    \item Led development of a Python domain-specific language for end-to-end test automation; developed parallel network-relaying software in C++; served as Scrum Master for a team of five.
+  \end{rSubsection}
 
-		\begin{rSubsection}{Sharif University of Technology}{September 2019 -- August 2024}{B.S. in Computer Engineering}{}{}
-			\item Overall GPA: 19.46 (/20)
-			\item Rank: 15/190
-		\end{rSubsection}
-	\end{rSection}
-	
-	\vspace{10pt}
-	
-	%----------------------------------------------------------------------------------------
-	%	HONORS
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{Honors}
-		\vspace{3pt}
-		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-			\textbf{2024} & Ranked \#4 in Iran's Master University Entrance Exam (System and Network subgroup) \\
-			\textbf{2019} & Ranked top 0.01\% in Iran's National University Entrance Exam \\
-			\textbf{2018} & Bronze medalist of Iran National Olympiad in Informatics (INOI) \\
-			\textbf{2014} & 3rd place in Sharif Mobile Programming Marathon \\
-		\end{tabular}
-	\end{rSection}
-	
-	\vspace{25pt}
-	
-	%----------------------------------------------------------------------------------------
-	%	RESEARCH EXPERIENCE SECTION
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{Research Experience}
-		\vspace{5pt}
-		\begin{rSubsection}{EPFL (École Polytechnique Fédérale de Lausanne)}{July 2023 -- September 2023}{Research Assistant: Fairness of Incentive Mechanism in Distributed Storage Systems}{Lausanne, Switzerland}
-			\item Collaborated in the \href{https://www.epfl.ch/labs/dedis/}{DEDIS} lab under Bryan Ford, developing mathematical models to analyze the fairness of incentive mechanisms in decentralized storage networks.
-			\item Improved the network shuffling method in the Swarm storage network, enhancing fairness in resource distribution.
-			\item Contributed to the Go-based simulation platform and authored a preprint published on \href{https://arxiv.org/abs/2307.02231}{arXiv}.
-		\end{rSubsection}
-		
-		%------------------------------------------------
-		
-		\begin{rSubsection}{ISTA (Institute of Science and Technology Austria)}{July 2022 -- February 2023}{Research Assistant: Parallel Execution in Blockchain Protocols}{Vienna, Austria}
-			\item Conducted performance analysis of commercial blockchains in the \href{https://ist.ac.at/en/research/kokoris-group/}{SPiDerS lab} under Lefteris Kokoris-Kogias.
-			\item Assisted in developing a test bench for evaluating parallel execution models in blockchain protocols.
-			\item Co-authored a preprint available on \href{https://arxiv.org/abs/2401.14278}{arXiv}, contributing to the identification of bottlenecks in blockchain scalability.
-		\end{rSubsection}
-		
-		%------------------------------------------------
-		
-		\begin{rSubsection}{Sharif University of Technology}{December 2021 -- February 2022}{Research Assistant: Resource Allocation in Fog Computing}{Tehran, Iran}
-			\item Analyzed resource allocation challenges in fog computing under the supervision of Ms. Hajar (Maryam) Siar.
-			\item Proposed new techniques for efficient resource allocation, which were later discussed in internal seminars.
-		\end{rSubsection}
-		
-		%------------------------------------------------
-		
-		\begin{rSubsection}{Sharif University of Technology}{May 2021 -- July 2021}{Research Project: Distributed Shortest Path in CONGEST Model}{Tehran, Iran}
-			\item Explored algorithms for single and multi-source shortest paths in the CONGEST model, with a focus on optimizing communication complexity.
-		\end{rSubsection}
-		
-	\end{rSection}
-	
-	%----------------------------------------------------------------------------------------
-	%	PUBLICATIONS SECTION
-	%----------------------------------------------------------------------------------------
-	\vspace{25pt}
-	
-	\begin{rSection}{Publications}
-		\vspace{5pt}	
-		
-		\textbf{CHIRON: Accelerating Node Synchronization without Security Trade-offs in Distributed Ledgers} \hfill {\href{https://arxiv.org/abs/2401.14278}{arXiv}--}\\ \phantom{} \hfill 2024
-		\smallskip
-		
-		\textbf{Altruism, Reciprocity, and Tokens to Reward Forwarding Data: Is That Fair?} \hfill {\href{https://arxiv.org/abs/2307.02231}{ICBC} -- 2024}
-		\smallskip
-	\end{rSection}
+  \begin{rSubsection}{Allameh Helli High School}{June 2019 -- October 2020}{Algorithm Design Teacher}{Tehran, Iran}
+    \item Taught algorithm design to students preparing for Iran's National Olympiad in Informatics.
+  \end{rSubsection}
+\end{rSection}
 
-%----------------------------------------------------------------------------------------
-%	EXAMPLE SECTION
-%----------------------------------------------------------------------------------------
+\begin{rSection}{Education}
+  \vspace{4pt}
+  \begin{rSubsection}{Sharif University of Technology}{September 2024 -- Expected August 2026}{M.S. in Computer Engineering (Networks)}{}{}
+    \item Current GPA: 18.50/20; TOEFL: 113/120
+  \end{rSubsection}
+  \begin{rSubsection}{Sharif University of Technology}{September 2019 -- July 2024}{B.S. in Computer Engineering}{}{}
+    \item Overall GPA: 19.48/20; Rank: 15/190
+  \end{rSubsection}
+\end{rSection}
 
-%\begin{rSection}{Section Name}
+\begin{rSection}{Honors}
+  \vspace{2pt}
+  \begin{tabular}{@{} >{\bfseries}l @{\hspace{4ex}} l @{}}
+    2026 & Ranked \textbf{\#7} in Iran's National Doctoral Entrance Exam (Networks and Systems subgroup) \\
+    2024 & Ranked \textbf{\#4} in Iran's Master University Entrance Exam (Systems and Networks subgroup) \\
+    2019 & Ranked top \textbf{0.01\%} in Iran's National University Entrance Exam \\
+    2018 & Bronze medalist, Iran National Olympiad in Informatics (INOI)
+  \end{tabular}
+\end{rSection}
 
-	%Section content\ldots
 
-%\end{rSection}
+\begin{rSection}{Selected Research Experience}
+  \vspace{4pt}
+  \begin{rSubsection}{Sharif University of Technology}{August 2025 -- Present}{L4S/AQM Prototyping for Volumetric Video Streaming}{Tehran, Iran}
+    \item Prototype DualPI2/L4S low-latency AQM in P4\_16 (BMv2), with per-egress-port state and traffic classification; compare against Linux implementations and evaluate queueing behavior for latency-sensitive media.
+  \end{rSubsection}
+  \begin{rSubsection}{Stony Brook University}{October 2024 -- Present}{Adaptive Leader Election for PBFT}{Remote}
+    \item Design a modular PBFT-style leader-election component and adaptive feedback loop using Byzantine-robust aggregation of node progress signals.
+  \end{rSubsection}
+  \begin{rSubsection}{EPFL DEDIS}{July 2023 -- September 2023}{Fairness in Decentralized Storage Systems}{Lausanne, Switzerland}
+    \item Built a mathematical model for fairness in Swarm, extended a Go simulator with churn and heterogeneous node behavior, and designed a network-shuffling mechanism that improved fairness. (\href{https://arxiv.org/abs/2307.02231}{arXiv})
+  \end{rSubsection}
+  \begin{rSubsection}{ISTA SPiDerS}{July 2022 -- February 2023}{Parallel Execution in Blockchain Protocols}{Vienna, Austria}
+    \item Reproduced prior results, built the experimental test bench, analyzed commercial-blockchain workloads, and contributed implementation work for parallel smart-contract execution. (\href{https://arxiv.org/abs/2401.14278}{arXiv})
+  \end{rSubsection}
+\end{rSection}
 
-%----------------------------------------------------------------------------------------
+\begin{rSection}{Publications}
+  \vspace{4pt}
+  \textbf{Pythia: Supercharging Parallel Smart Contract Execution to Guide Stragglers and Full Nodes to Safety} \hfill \href{https://arxiv.org/abs/2401.14278}{SIB -- 2024}\\
+  \textbf{Altruism, reciprocity, and tokens to reward forwarding data: Is that fair?} \hfill \href{https://arxiv.org/abs/2307.02231}{ICBC -- 2024}
+\end{rSection}
 
 \end{document}

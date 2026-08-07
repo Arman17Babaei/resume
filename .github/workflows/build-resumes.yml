@@ -1,0 +1,54 @@
+name: Build resume PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.tex'
+      - '*.cls'
+      - '**/*.tex'
+      - '**/*.cls'
+      - '.github/workflows/build-resumes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compile academic and professional resumes
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            academic.tex
+            professional.tex
+
+      - name: Verify both resumes are exactly two pages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          for pdf in academic.pdf professional.pdf; do
+            pages=$(pdfinfo "$pdf" | awk '/^Pages:/ {print $2}')
+            echo "$pdf: $pages pages"
+            test "$pages" = "2"
+          done
+
+      - name: Commit generated PDFs
+        run: |
+          if git diff --quiet -- academic.pdf professional.pdf && \
+             git ls-files --error-unmatch academic.pdf professional.pdf >/dev/null 2>&1; then
+            echo "PDFs are already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f academic.pdf professional.pdf
+          git commit -m "build: update resume PDFs [skip ci]" || exit 0
+          git push

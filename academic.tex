@@ -1,305 +1,91 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Professional CV
-% LaTeX Template
-% Version 3.0 (December 17, 2022)
-%
-% This template originates from:
-% https://www.LaTeXTemplates.com
-%
-% Author:
-% Vel (vel@latextemplates.com)
-%
-% Original author:
-% Trey Hunner (http://www.treyhunner.com/)
-%
-% License:
-% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
-%
+% Academic CV - Arman Babaei
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%  PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[
-  %a4paper, % Uncomment for A4 paper size (default is US letter)
-  11pt, % Default font size, can use 10pt, 11pt or 12pt
-]{resume} % Use the resume class
-
-\usepackage{ebgaramond} % Use the EB Garamond font
+\documentclass[11pt]{resume}
+\usepackage{ebgaramond}
 \usepackage{ulem}
 \usepackage{hyperref}
-
-\AtBeginDocument{
-  \let\oldhref=\href
-  \renewcommand\href[2]{\dotuline{\oldhref{#1}{#2}}}
-}
-
+\AtBeginDocument{\let\oldhref=\href\renewcommand\href[2]{\dotuline{\oldhref{#1}{#2}}}}
 \pagestyle{plain}
-%------------------------------------------------
-
-\name{Arman Babaei} % Your name to appear at the top
-
-% You can use the \address command up to 3 times for 3 different
-% addresses or pieces of contact information
-% Any new lines (\\) you use in the \address commands will be
-% converted to symbols, so each address will appear as a single line.
-
-% \address{123 Broadway \\ City, State 12345} % Main address
-
-% \address{123 Pleasant Lane \\ City, State 12345} % A secondary
-% address (optional)
-
-\address{+98~$\cdot$~919~$\cdot$~043~$\cdot$~7966
-\\ ar.babaei@sharif.edu} % Contact information
-
-%----------------------------------------------------------------------------------------
+\name{Arman Babaei}
+\address{+98~$\cdot$~919~$\cdot$~043~$\cdot$~7966 \\ ar.babaei@sharif.edu \\ \href{https://github.com/Arman17Babaei}{github}}
 
 \begin{document}
 
-%\vspace{20pt}
-
-%----------------------------------------------------------------------------------------
-%  EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
 \begin{rSection}{Education}
-  \vspace{5pt}
-  \begin{rSubsection}{Sharif University of Technology}{September 2024
-    -- Expected July 2026}{M.S. in Computer Engineering (Networks)}{}{}
-  \item Current GPA: 18.60 (/20)
-  \item TOEFL Score: 113/120
+  \vspace{4pt}
+  \begin{rSubsection}{Sharif University of Technology}{September 2024 -- Expected August 2026}{M.S. in Computer Engineering (Networks)}{}{}
+    \item Current GPA: 18.50/20; TOEFL: 113/120
   \end{rSubsection}
-
-  %------------------------------------------------
-
-  \begin{rSubsection}{Sharif University of Technology}{September 2019
-    -- July 2024}{B.S. in Computer Engineering}{}{}
-  \item Overall GPA: 19.48 (/20)
-  \item Rank: 15/190
-  \end{rSubsection}
-
-  %------------------------------------------------
-
-  \begin{rSubsection}{Allameh Helli Highschool}{2016 -- 2019}{}{}
-  \item Physics and Mathematics
-  \item Overall GPA: 19.74 (/20)
+  \begin{rSubsection}{Sharif University of Technology}{September 2019 -- July 2024}{B.S. in Computer Engineering}{}{}
+    \item Overall GPA: 19.48/20; Rank: 15/190
   \end{rSubsection}
 \end{rSection}
 
-%----------------------------------------------------------------------------------------
-%  HONORS
-%----------------------------------------------------------------------------------------
 \begin{rSection}{Honors}
-  \vspace{3pt}
-  \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-    \textbf{2024} & Ranked \textbf{\#4} in Iran's Master University
-    Entrance Exam. (System and network subgroup) \\
-    \textbf{2019} & Ranked top \textbf{0.01\%} in Iran's National
-    University Entrance Exam. \\
-    \textbf{2018} & \textbf{Bronze} medalist of Iran National
-    Olympiad in Informatics. (\textbf{INOI}) \\
-    % \textbf{2014} & \textbf{3rd} place in Sharif Mobile Programming Marathon\\
+  \vspace{2pt}
+  \begin{tabular}{@{} >{\bfseries}l @{\hspace{4ex}} l @{}}
+    2026 & Ranked \textbf{\#7} in Iran's National Doctoral Entrance Exam (Networks and Systems subgroup) \\
+    2024 & Ranked \textbf{\#4} in Iran's Master University Entrance Exam (Systems and Networks subgroup) \\
+    2019 & Ranked top \textbf{0.01\%} in Iran's National University Entrance Exam \\
+    2018 & \textbf{Bronze medalist}, Iran National Olympiad in Informatics (INOI)
   \end{tabular}
 \end{rSection}
 
-% \vspace{15pt}
-%----------------------------------------------------------------------------------------
-%  RESEARCH EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
-
 \begin{rSection}{Research Experience}
-  \vspace{5pt}
-
-  \begin{rSubsection}{Sharif University of Technology}{August 2025 -
-    Present}{L4S/AQM Prototyping for Video Streaming}{Tehran, Iran}
-  \item Prototyping L4S-style low-latency AQM using DualPI2 in P4\_16
-    (BMv2 \texttt{v1model}) with per-egress-port register state;
-    studying how ingress traffic classification interacts with egress
-    AQM behavior; and comparing against Linux DualPI2
-    implementations. Exploring different queuing mechanisms to
-    improve latency and QoS for volumetric video streaming.
+  \vspace{4pt}
+  \begin{rSubsection}{Sharif University of Technology}{August 2025 -- Present}{L4S/AQM Prototyping for Volumetric Video Streaming}{Tehran, Iran}
+    \item Prototyping L4S-style low-latency AQM with DualPI2 in P4\_16 (BMv2 \texttt{v1model}), including per-egress-port state and ingress-to-egress traffic classification; comparing behavior with Linux DualPI2 and exploring queueing mechanisms for lower latency and better QoS.
   \end{rSubsection}
-
-  \begin{rSubsection}{Stony Brook University}{October 2024 -
-    Present}{Adaptive Leader Election for PBFT}{remote}
-  \item Designing an adaptive leader-election module for a PBFT-style
-    protocol with a component-based architecture (PBFT core,
-    ViewChanger, LeaderElection) and clear interfaces for state
-    reporting and control. Developing a learning-based loop that
-    aggregates node-reported execution progress via Byzantine-robust
-    consensus and median estimation to adapt leader-election decisions.
+  \begin{rSubsection}{Stony Brook University}{October 2024 -- Present}{Adaptive Leader Election for PBFT}{Remote}
+    \item Designing a modular PBFT-style system with separate core, view-change, and leader-election components; developing an adaptive loop that uses Byzantine-robust aggregation of node-reported progress to adjust leader-selection decisions.
   \end{rSubsection}
-
-  \begin{rSubsection}{EPFL (École Polytechnique Fédérale de
-    Lausanne)}{July 2023 - September 2023}{Fairness of Incentive
-    Mechanism in Distributed Storage Systems}{Lausanne, Switzerland}
-  \item Working in \textbf{Bryan Ford}'s lab
-    (\href{https://www.epfl.ch/labs/dedis/}{DEDIS}) supervised by
-    Vero Estrada-Galiñanes on income distribution and fairness in
-    the Swarm storage network. I worked on a mathematical model that
-    enables analyzing network properties
-    without simulation, and I added the analysis for different node
-    behaviors and nodes' churn to a simulator written
-    in Go. I also developed and evaluated a network shuffling method
-    which improved the fairness. (preprint
-    available at \href{https://arxiv.org/abs/2307.02231}{arXiv})
+  \begin{rSubsection}{EPFL (École Polytechnique Fédérale de Lausanne)}{July 2023 -- September 2023}{Fairness in Decentralized Storage Systems}{Lausanne, Switzerland}
+    \item Worked in Bryan Ford's \href{https://www.epfl.ch/labs/dedis/}{DEDIS} lab, supervised by Vero Estrada-Galiñanes. Developed a mathematical model for fairness in Swarm, extended a Go simulator with churn and heterogeneous node behaviors, and designed and evaluated a network-shuffling mechanism that improved fairness. (\href{https://arxiv.org/abs/2307.02231}{arXiv})
   \end{rSubsection}
-
-  %------------------------------------------------
 
   \pagebreak
 
-  \begin{rSubsection}{ISTA (Institute of Science and Technology
-    Austria)}{July 2022 - February 2023}{Parallel Execution in
-    Blockchain Protocols}{Vienna, Austria}
-  \item Working in the
-    \href{https://ist.ac.at/en/research/kokoris-group/}{SPiDerS lab}
-    of the Institute of Science and Technology Austria under
-    supervision of \textbf{Lefteris Kokoris-Kogias}, responsible for
-    reproducing the
-    previous results and setting up a test bench and other
-    implementation-needed issues, such as analyzing the
-    current workload of commercial blockchains. Contributing to the
-    discovery of potential aids that can be used to
-    improve performance. (preprint
-    available at \href{https://arxiv.org/abs/2401.14278}{arXiv})
+  \begin{rSubsection}{ISTA (Institute of Science and Technology Austria)}{July 2022 -- February 2023}{Parallel Execution in Blockchain Protocols}{Vienna, Austria}
+    \item Worked in the \href{https://ist.ac.at/en/research/kokoris-group/}{SPiDerS lab} under Lefteris Kokoris-Kogias and Marios Kogias. Reproduced prior results, built the experimental test bench, analyzed commercial-blockchain workloads, and contributed implementation and algorithmic work for parallel smart-contract execution. (\href{https://arxiv.org/abs/2401.14278}{arXiv})
   \end{rSubsection}
-
-  %------------------------------------------------
-
-  %   \begin{rSubsection}{Sharif University of Technology}{December 2021
-  %     - February 2022}{Resource Allocation in Fog Computing}{Tehran, Iran}
-  %   \item Researching under supervision of Ms Hajar (Maryam) Siar, PhD
-  %     student of \textbf{Dr Mohammad Izadi}, about fog computing
-  %     challenges in resource allocation and available techniques.
-  %     This Consists of studying an overview of challenges in cloud,
-  %     edge, and fog computing, and also approaches used
-  %     for tackling the resource allocation problem and trying to come
-  %     up with ideas in this area.
-  %   \end{rSubsection}
-
-  %------------------------------------------------
-
-  %   \vspace{10pt}
-
-  \begin{rSubsection}{Sharif University of Technology}{May 2021 -
-    July 2021}{Distributed Shortest Path in CONGEST Model}{Tehran, Iran}
-  \item Analyzing upper and lower bounds for finding
-    single/multi-source shortest path in CONGEST model and
-    trying to come up with new ideas for lowering the upper bound of
-    single source shortest path problem.
+  \begin{rSubsection}{Sharif University of Technology}{May 2021 -- July 2021}{Distributed Shortest Path in the CONGEST Model}{Tehran, Iran}
+    \item Studied upper and lower bounds for SSSP/MSSP in the CONGEST model and explored approaches for lowering the upper bound for single-source shortest paths.
   \end{rSubsection}
-
 \end{rSection}
-
-% \pagebreak
-
-% \vspace{10pt}
-
-%----------------------------------------------------------------------------------------
-%  PUBLICATIONS SECTION
-%----------------------------------------------------------------------------------------
 
 \begin{rSection}{Publications}
-  \vspace{5pt}
-
-  \textbf{Pythia: Supercharging Parallel Smart Contract Execution to Guide Stragglers and Full Nodes to Safety} \hfill
-  {\href{https://arxiv.org/abs/2401.14278}{SIB} -- }\\
-  \phantom{} \hfill 2024
-  \smallskip
-
-  \textbf{Altruism, reciprocity, and tokens to reward forwarding data: Is that fair?} \hfill
-  {\href{https://arxiv.org/abs/2307.02231}{ICBC} -- 2024}
-  \smallskip
+  \vspace{4pt}
+  \textbf{Pythia: Supercharging Parallel Smart Contract Execution to Guide Stragglers and Full Nodes to Safety} \hfill \href{https://arxiv.org/abs/2401.14278}{SIB -- 2024}\\
+  \textbf{Altruism, reciprocity, and tokens to reward forwarding data: Is that fair?} \hfill \href{https://arxiv.org/abs/2307.02231}{ICBC -- 2024}
 \end{rSection}
 
-%----------------------------------------------------------------------------------------
-%  WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
-% \vspace*{15pt}
 \begin{rSection}{Work Experience}
-  \vspace{5pt}
+  \vspace{4pt}
   \begin{rSubsection}{Tapsi}{September 2024 -- Present}{Proficient Platform Engineer}{Tehran, Iran}
-      \item \textbf{Apr'26 -- Present} Conducting platform R\&D for reliability, deployment safety, observability, and dev experience.
-      \item \textbf{Sep'25 -- Apr'26} Improved backend reliability through monitoring, incident analysis, and operations.
-      \item \textbf{Sep'24 -- Sep'25} Built production passenger--driver matching features for a ride-hailing system.
+    \item \textbf{Apr'26 -- Present, Platform Engineering:} Develop and roll out safer Kubernetes delivery workflows using Helm, Flagger, and Istio; improve deployment safety, observability, and developer tooling for production microservices.
+    \item \textbf{Sep'25 -- Apr'26, SRE:} Operated ride-hailing microservices through monitoring, incident analysis, on-call response, and reliability work across services and deployment infrastructure.
+    \item \textbf{Sep'24 -- Sep'25, Backend Engineering:} Built and operated passenger--driver matching features; extracted and rewrote Node.js services in Go, including services handling roughly 1k requests/second.
   \end{rSubsection}
-
-  %------------------------------------------------
-
-  \begin{rSubsection}{Undisclosed Hedge Fund}{September 2023 -
-    February 2024}{Full-stack Developer}{remote}
-  \item Developing a job scheduler web service for intra-company tasks.
+  \begin{rSubsection}{Undisclosed Hedge Fund}{September 2023 -- February 2024}{Full-stack Developer}{Remote}
+    \item Developed a Python/Django job-scheduler web service for intra-company tasks and its REST APIs.
   \end{rSubsection}
-
-  %------------------------------------------------
-
-  \begin{rSubsection}{Mahsan co.}{September 2020 - July
-    2022}{C++/Python Developer}{Tehran, Iran}
-  \item Python Developer, Developing a domain-specific language for
-    end-to-end testing.
-  \item C++ Developer, Developing a parallel network relaying software.
-  \item Scrum Master, leading a team of five.
+  \begin{rSubsection}{Mahsan Co.}{September 2020 -- July 2022}{C++/Python Developer}{Tehran, Iran}
+    \item Developed a Python DSL for end-to-end testing and parallel network-relaying software in C++; also served as Scrum Master for a team of five.
   \end{rSubsection}
-
-  %------------------------------------------------
-
-  \begin{rSubsection}{Allameh Helli Highschool}{June 2019 - October
-    2020}{Algorithm Design Teacher}{Tehran, Iran}
-  \item Teaching algorithm design to students with the aim of
-    competing in the Iran National Olympiad in Informatics.
-  \end{rSubsection}
-
 \end{rSection}
-
-% \vspace{10pt}
-
-%----------------------------------------------------------------------------------------
-%  TEACHING ASSISTANT
-%----------------------------------------------------------------------------------------
 
 \begin{rSection}{Teaching Assistant}
-  \vspace{5pt}
-  \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{\hspace{6ex}} l @{}}
-    Operating Systems & F'23 & Responsible for designing the
-    assignments of the course. \\
-    Game Theory & S'23 & Designed and evaluated three practical assignments.\\
-    Advanced Programming & S'22,S'23 & Responsible for designing and
-    coordinating the course project. \\
-    Fundamentals of the Programming & F'22 & Responsible for
-    designing and coordinating the course project. \\
-    Artificial Intelligence & S'22,F'22 & Helped in designing and
-    grading assignments. \\
-    Data Structures and Algorithms & S'22 & Responsible for designing
-    midterm and final exams. \\
-    Logic Design & S'22 & Designed and examined one of the
-    assignments of the semester.
+  \vspace{4pt}
+  \begin{tabular}{@{} >{\bfseries}l @{\hspace{4ex}} l @{\hspace{4ex}} l @{}}
+    Operating Systems & F'23 & Designed course assignments \\
+    Game Theory & S'23 & Designed and evaluated practical assignments \\
+    Advanced Programming & S'22, S'23 & Designed and coordinated the course project \\
+    Fundamentals of Programming & F'22 & Designed and coordinated the course project \\
+    Artificial Intelligence & S'22, F'22 & Helped design and grade assignments \\
+    Data Structures and Algorithms & S'22 & Designed midterm and final exams \\
+    Logic Design & S'22 & Designed and examined a semester assignment
   \end{tabular}
 \end{rSection}
-
-% \vspace{10pt}
-
-% \begin{rSection}{Influential Courses}
-%   \vspace{5pt}
-%   \centering
-%   \begin{tabular}{@{} l @{\hspace{4ex}} l @{\hspace{4ex}} l @{}}
-%     Distributed Systems & Theory of Machines and Languages & Design
-%     of Algorithms \\
-%     Game Theory & Machine Learning & Multicore processing \\
-%   \end{tabular}\par
-% \end{rSection}
-
-%----------------------------------------------------------------------------------------
-%  EXAMPLE SECTION
-%----------------------------------------------------------------------------------------
-
-%\begin{rSection}{Section Name}
-
-%Section content\ldots
-
-%\end{rSection}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
