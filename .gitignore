@@ -38,3 +38,5 @@ latex.out/
 *.pdf
 !academic.pdf
 !professional.pdf
+!imec-cv.pdf
+!imec-cover-letter.pdf

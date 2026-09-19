@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% imec System Software Engineer application - Arman Babaei
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{resume}
+\usepackage{ebgaramond}
+\usepackage[normalem]{ulem}
+\usepackage[hidelinks]{hyperref}
+\AtBeginDocument{\let\oldhref=\href\renewcommand\href[2]{\dotuline{\oldhref{#1}{#2}}}}
+\hypersetup{pdftitle={Arman Babaei - imec System Software Engineer},pdfauthor={Arman Babaei}}
+\pagestyle{plain}
+\name{Arman Babaei}
+\address{+98~$\cdot$~919~$\cdot$~043~$\cdot$~7966 \\ 292.arma@gmail.com \\ \href{https://www.linkedin.com/in/arman-babaei/}{linkedin} \\ \href{https://github.com/Arman17Babaei}{github}}
+
+\begin{document}
+\begin{rSection}{Professional Summary}
+Software engineer with professional C++ and Python experience in network software and test automation, alongside production Go development and reliability engineering. Research at Sharif, EPFL and ISTA spans programmable networking, experimental systems and performance analysis.
+\end{rSection}
+
+\begin{rSection}{Skills}
+\begin{tabular}{@{} >{\bfseries}l @{\hspace{3ex}} p{0.75\linewidth} @{}}
+Programming & C++, Python, Go, C, Bash; additional experience with Rust, Kotlin and Java \\
+Systems & Linux networking, concurrency, distributed systems, P4, QUIC, QEMU, Mininet \\
+Testing and delivery & Git, automated testing, packet simulation, Docker, CI/CD, GitLab CI \\
+Platform & Kubernetes, Helm, Flagger, Istio, GitOps, Prometheus, Grafana \\
+Firmware projects & UEFI, EDK II, ACPI inspection and network-interface discovery
+\end{tabular}
+\end{rSection}
+
+\begin{rSection}{Work Experience}
+\begin{rSubsection}{Tapsi}{September 2024 -- Present}{Proficient Platform Engineer}{Tehran, Iran}
+\item \textbf{Platform Engineer (Apr'26 -- Present):} Develop deployment automation and safer Kubernetes delivery workflows with Helm, Flagger, Istio and GitOps, including canary releases, rollback safety and observability.
+\item \textbf{SRE (Sep'25 -- Apr'26):} Investigated production incidents and debugged failures across microservices, service-mesh traffic and deployment infrastructure; supported on-call operations.
+\item \textbf{Backend Engineer (Sep'24 -- Sep'25):} Built passenger--driver matching features and rewrote Node.js services in Go, including services handling approximately 1,000 requests/second; maintained Go/Python/Node.js services using Kafka and Kubernetes.
+\end{rSubsection}
+\begin{rSubsection}{Undisclosed Hedge Fund}{September 2023 -- February 2024}{Full-stack Developer Intern}{Remote}
+\item Developed a Python/Django service for scheduling internal jobs, including REST APIs and frontend integration.
+\end{rSubsection}
+\begin{rSubsection}{Mahsan Co.}{September 2020 -- July 2022}{C++/Python Developer}{Tehran, Iran}
+\item Developed parallel network-relaying software in C++ that connected to ISP switches.
+\item Led development of a Python domain-specific language for end-to-end test automation, using simulated network packets to exercise network behavior.
+\item Served as Scrum Master for a team of five.
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Education}
+\textbf{Sharif University of Technology} \hfill September 2024 -- Present\\
+\textit{M.S. in Computer Engineering (Networks), pending defense}\\
+Thesis approved; oral defense pending scheduling. GPA: 18.50/20.\\[5pt]
+\textbf{Sharif University of Technology} \hfill September 2019 -- July 2024\\
+\textit{B.S. in Computer Engineering}\\
+GPA: 19.48/20; rank: 15/190. English: TOEFL 113/120.
+\end{rSection}
+
+\begin{rSection}{Availability}
+Available from November 2026, subject to visa and work authorization for Belgium. Employer support required.
+\end{rSection}
+
+\newpage
+\begin{rSection}{Research Experience}
+\begin{rSubsection}{Sharif University of Technology}{August 2025 -- Present}{L4S and Volumetric Video Streaming}{Tehran, Iran}
+\item Implemented a DualPI2 active queue management prototype in P4/BMv2 and compared its behavior with a Linux reference implementation for low-latency networking.
+\item Built a reproducible experiment harness with C traffic fixtures and Python automation for QEMU and Mininet. Combined packet captures, transport metrics and queue counters to validate congestion behavior and analyze results.
+\item Evaluated delivery and rendered quality for 3D Gaussian Splatting streaming. In the studied setup with competing classic traffic, measured 99th-percentile bottleneck queueing delay of approximately 2.3\,ms with L4S versus 49.2\,ms in the classic baseline. \href{https://github.com/Arman17Babaei/imquic-l4s-tests}{Experiment code}
+\end{rSubsection}
+\begin{rSubsection}{Stony Brook University}{October 2024 -- Present}{Adaptive Leader Election for PBFT}{Remote}
+\item Develop a modular Go implementation separating consensus, view changes and leader election; investigate adaptive selection using Byzantine-robust aggregation of node progress signals. \href{https://github.com/Arman17Babaei/pbft}{Implementation}
+\end{rSubsection}
+\begin{rSubsection}{EPFL DEDIS}{July 2023 -- September 2023}{Fairness in Decentralized Storage}{Lausanne, Switzerland}
+\item Developed a mathematical model for fairness in Swarm, extended a Go simulator with churn and heterogeneous node behavior, and designed and evaluated a network-shuffling mechanism to improve fairness.
+\end{rSubsection}
+\begin{rSubsection}{ISTA SPiDerS}{July 2022 -- February 2023}{Parallel Execution in Blockchain Protocols}{Austria}
+\item Reproduced prior results, built an experimental test bench and analyzed blockchain workloads; contributed implementation work for parallel smart-contract execution.
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Selected Software Projects}
+\begin{rSubsection}{\href{https://github.com/Arman17Babaei/UEFI-System-Information-Viewer}{UEFI System Information Viewer}}{}{C, EDK II, QEMU}{}
+\item Contributed ACPI table inspection, network-interface discovery through UEFI protocols and display fixes to an interactive firmware-level system information viewer.
+\end{rSubsection}
+\begin{rSubsection}{\href{https://github.com/Arman17Babaei/touch-app}{Touch}}{}{Kotlin, Go, Android, Wear OS}{}
+\item Developed standalone phone and watch applications integrating haptic playback, voice communication, persistent message delivery and a Go backend, with automated tests and release workflows.
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Selected Publications}
+\textbf{CHIRON: Accelerating Node Synchronization without Security Trade-offs in Distributed Ledgers}.\\
+\href{https://arxiv.org/abs/2401.14278}{arXiv, revised 2026}.\\[5pt]
+\textbf{Tit-for-Token: Understanding Fairness when Forwarding Data by Incentivized Peers in Decentralized Storage Networks}. \href{https://arxiv.org/abs/2307.02231}{arXiv, 2023}.
+\end{rSection}
+
+\begin{rSection}{Teaching and Recognition}
+Algorithm design teacher (2019--2020); university teaching assistant experience includes Operating Systems and Data Structures and Algorithms. Bronze medal, Iran National Olympiad in Informatics (2018).
+\end{rSection}
+\end{document}

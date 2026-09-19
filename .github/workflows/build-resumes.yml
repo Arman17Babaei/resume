@@ -9,46 +9,95 @@ on:
       - '**/*.tex'
       - '**/*.cls'
       - '.github/workflows/build-resumes.yml'
+  pull_request:
+    paths:
+      - '**/*.tex'
+      - '**/*.cls'
+      - '.github/workflows/build-resumes.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  build-and-commit:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Compile academic and professional resumes
+      - name: Compile resumes and imec application
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
             academic.tex
             professional.tex
+            imec-cv.tex
+            imec-cover-letter.tex
 
-      - name: Verify both resumes are exactly two pages
+      - name: Verify resume and cover letter page counts
         run: |
           sudo apt-get update
           sudo apt-get install -y poppler-utils
-          for pdf in academic.pdf professional.pdf; do
+          for pdf in academic.pdf professional.pdf imec-cv.pdf; do
             pages=$(pdfinfo "$pdf" | awk '/^Pages:/ {print $2}')
             echo "$pdf: $pages pages"
             test "$pages" = "2"
           done
+          pages=$(pdfinfo imec-cover-letter.pdf | awk '/^Pages:/ {print $2}')
+          echo "imec-cover-letter.pdf: $pages pages"
+          test "$pages" = "1"
+
+      - name: Upload PDFs for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: |
+            academic.pdf
+            professional.pdf
+            imec-cv.pdf
+            imec-cover-letter.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+  commit-pdfs:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Check that main still matches the built revision
+        id: revision
+        env:
+          BUILT_SHA: ${{ github.sha }}
+        run: |
+          if [ "$(git rev-parse HEAD)" = "$BUILT_SHA" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Skipping PDFs from an outdated revision."
+          fi
+
+      - name: Download generated PDFs
+        if: steps.revision.outputs.current == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: resume-pdfs
 
       - name: Commit generated PDFs
+        if: steps.revision.outputs.current == 'true'
         run: |
-          if git diff --quiet -- academic.pdf professional.pdf && \
-             git ls-files --error-unmatch academic.pdf professional.pdf >/dev/null 2>&1; then
+          git add -f academic.pdf professional.pdf imec-cv.pdf imec-cover-letter.pdf
+          if git diff --cached --quiet; then
             echo "PDFs are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f academic.pdf professional.pdf
-          git commit -m "build: update resume PDFs [skip ci]" || exit 0
+          git commit -m "build: update resume PDFs [skip ci]"
           git push
